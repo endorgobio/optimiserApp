@@ -2,7 +2,7 @@ import pandas as pd
 import pyomo
 from pyomo.opt import SolverFactory
 from pyomo.environ import *
-# import knapsack as kp
+import knapsack as kp
 import dash
 from dash.dependencies import Input, Output
 import dash_html_components as html
@@ -12,9 +12,9 @@ import dash_core_components as dcc
 
 # set the solver and its location
 solvername='glpk'
-#solverpath_exe='C:\\glpk-4.65\\w64\\glpsol'
-#solver=SolverFactory(solvername, executable=solverpath_exe)
-solver=SolverFactory(solvername)
+solverpath_exe='C:\\glpk-4.65\\w64\\glpsol'
+solver=SolverFactory(solvername, executable=solverpath_exe)
+#solver=SolverFactory(solvername)
 
 #solvername='gurobi'
 #solver = SolverFactory(solvername)
@@ -54,7 +54,7 @@ def create_model_concrete(ITEMS, profits, weights, capacity):
 
 # 1. Concrete model
 # Creates a concrete model
-model = create_model_concrete(ITEMS, profits, weights, 14)
+model = kp.create_model_concrete(ITEMS, profits, weights, 14)
 
 # run the model
 solver.solve(model)
