@@ -13,8 +13,8 @@ import dash_core_components as dcc
 # set the solver and its location
 solvername='glpk'
 solverpath_exe='C:\\glpk-4.65\\w64\\glpsol'
-solver=SolverFactory(solvername, executable=solverpath_exe)
-#solver=SolverFactory(solvername)
+#solver=SolverFactory(solvername, executable=solverpath_exe)
+solver=SolverFactory(solvername)
 
 #solvername='gurobi'
 #solver = SolverFactory(solvername)
