@@ -2,3 +2,4 @@ dash==1.19.0
 pandas==1.2.3
 gunicorn==20.0.4
 pyomo==6.0.1
+geopandas==0.9.0
