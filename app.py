@@ -3,6 +3,10 @@ import knapsack as kp
 import dash
 import dash_html_components as html
 
+import geopandas as gpd
+gdf = gpd.read_file('data/co_2018_MGN_MPIO_POLITICO.geojson')
+gdf.head()
+
 
 
 
